@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "vite": "npm:vite"
+  },
+  "compilerOptions": {
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "deno.ns"
+    ]
+  },
+  "nodeModulesDir": "auto"
+}
