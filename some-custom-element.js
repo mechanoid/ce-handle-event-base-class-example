@@ -32,7 +32,7 @@ export class SomeCustomElement extends BaseClass {
     this.update();
   }
 
-  // PointerEvent as clicks are a PointerEvent
+  // this will be actually a PointerEvent as clicks are a PointerEvent
   handleclick(event) {
     console.log(event);
     this.#count += 1;

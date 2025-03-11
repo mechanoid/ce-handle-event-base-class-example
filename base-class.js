@@ -4,6 +4,8 @@ export class BaseClass extends HTMLElement {
   //
   // how do I type this kind of dynamic cr*p, without knowing which
   // methods the depending child will provide.
+  //
+  // Additionally the event type is not known and PointerEvent is e.g. incompatible to Event
   handleEvent(event) {
     this[`handle${event.type}`](event);
   }

@@ -13,10 +13,11 @@ Is there as possible way to express that freedom in Typescript?
 ```
 export class SomeCustomElement extends BaseClass {
   connectedCallback() {
+    // registering the events this class should handle
     this.addEventListener("click", this);
   }
   
-  // PointerEvent as clicks are a PointerEvent
+  // this will be actually a PointerEvent as clicks are a PointerEvent
   handleclick(event) {
     console.log(event);
     this.#count += 1;
@@ -28,8 +29,13 @@ export class SomeCustomElement extends BaseClass {
 
 ```
 export class BaseClass extends HTMLElement {
-  // how do I type this kind of dynamic crap, without knowing which
+  // handleEvent captures all events, when the Class instance is used as target in an addEventListener Call
+  // e.g. this.addEventListener('click', this);
+  //
+  // how do I type this kind of dynamic cr*p, without knowing which
   // methods the depending child will provide.
+  //
+  // Additionally the event type is not known and PointerEvent is e.g. incompatible to Event
   handleEvent(event) {
     this[`handle${event.type}`](event);
   }
