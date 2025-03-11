@@ -10,7 +10,7 @@ Is there as possible way to express that freedom in Typescript?
 
 ./some-custom-element.js depending on a base class
 
-```
+```js
 export class SomeCustomElement extends BaseClass {
   connectedCallback() {
     // registering the events this class should handle
@@ -27,7 +27,7 @@ export class SomeCustomElement extends BaseClass {
 
 ./base-class.js
 
-```
+```js
 export class BaseClass extends HTMLElement {
   // handleEvent captures all events, when the Class instance is used as target in an addEventListener Call
   // e.g. this.addEventListener('click', this);
